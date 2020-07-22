@@ -1,4 +1,5 @@
 package com.example.seconlifeps.Fragments;
+import android.Manifest;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
@@ -14,6 +15,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 
 import com.example.seconlifeps.LoginActivity;
@@ -24,6 +26,8 @@ import com.example.seconlifeps.model.SQLiteHelper;
 public class ProfileFragment extends Fragment{
 
     public static SQLiteHelper mySqliteHelper;
+
+    final int REQUEST_CODE_GALLERY = 999;
 
     String userId;
 
@@ -37,6 +41,7 @@ public class ProfileFragment extends Fragment{
 
         View view = inflater.inflate(R.layout.profile_fragment,container,false);
 
+        ivPhoto = (ImageView) view.findViewById(R.id.pro_image);
         etemail = view.findViewById(R.id.pro_edtMail);
         etfname = view.findViewById(R.id.pro_edtFname);
         etlname = view.findViewById(R.id.pro_edtLname);
@@ -103,6 +108,7 @@ public class ProfileFragment extends Fragment{
 
             Log.d("User:",email);
         }
+
 
         btnupdate.setOnClickListener( new View.OnClickListener() {
             @Override
