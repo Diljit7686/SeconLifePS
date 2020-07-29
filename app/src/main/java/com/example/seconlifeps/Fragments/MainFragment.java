@@ -18,6 +18,7 @@ import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import com.example.seconlifeps.R;
+import com.example.seconlifeps.model.Business;
 import com.example.seconlifeps.model.SQLiteHelper;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
@@ -179,8 +180,13 @@ public class MainFragment extends Fragment implements OnMapReadyCallback {
 
         // Marker 5
         latlon = new LatLng(43.644354,-79.527953);
-        options = new MarkerOptions().position(latlon).title("TEtobicoke Humane Society").snippet("67 Six Point Rd, Etobicoke, ON M8Z\n" +
+        options = new MarkerOptions().position(latlon).title("Etobicoke Humane Society").snippet("67 Six Point Rd, Etobicoke, ON M8Z\n" +
                 "2X3");
+        googleMap.addMarker(options);
+
+        // Marker 6
+        latlon = new LatLng(43.626197,-79.503205);
+        options = new MarkerOptions().position(latlon).title("South Etobicoke Animal Rescue").snippet("2741 The Queensway, Etobicoke, ON M8Z 1M8");
         googleMap.addMarker(options);
 
         CameraPosition cameraPosition = CameraPosition.builder().target(latlon).zoom(10).bearing(0).tilt(0).build();

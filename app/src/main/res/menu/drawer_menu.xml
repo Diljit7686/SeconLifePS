@@ -29,15 +29,21 @@
                 android:icon="@drawable/ic_menu_pet">
             </item>
             <item
-                android:id="@+id/exit"
-                android:title="Log Out"
-                android:icon="@drawable/ic_menu_exit">
+                android:id="@+id/appointments"
+                android:title="Appointmens"
+                android:icon="@drawable/ic_menu_appointment">
             </item>
             <item
                 android:id="@+id/users"
                 android:title="Users"
+                android:icon="@drawable/ic_menu_users">
+            </item>
+            <item
+                android:id="@+id/exit"
+                android:title="Log Out"
                 android:icon="@drawable/ic_menu_exit">
             </item>
+
 
         </menu>
     </item>

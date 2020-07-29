@@ -12,7 +12,6 @@ import androidx.fragment.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Gravity;
 import android.view.MenuItem;
 
 import com.example.seconlifeps.Fragments.MainFragment;
@@ -145,10 +144,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         if (item.getItemId() == R.id.users) {
 
-            fragmentManager = getSupportFragmentManager();
-            fragmentTransaction = fragmentManager.beginTransaction();
-            fragmentTransaction.replace(R.id.container, new SheltersFragment());
-            fragmentTransaction.commit();
+         //   fragmentManager = getSupportFragmentManager();
+         //   fragmentTransaction = fragmentManager.beginTransaction();
+         //   fragmentTransaction.replace(R.id.container, new ShelterDetailFragment());
+         //   fragmentTransaction.commit();
 
 
             Intent i = new Intent(MainActivity.this, ListNotesActivity.class);
@@ -172,7 +171,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         fragmentManager = getSupportFragmentManager();
         fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.container, reviewsFragment);
-        fragmentTransaction.addToBackStack("Return");
+        fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
 
     }

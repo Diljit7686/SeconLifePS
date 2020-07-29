@@ -150,6 +150,7 @@ public class SheltersFragment extends Fragment{
         business_list.add(new Business(5,"","67 Six Point Rd, Etobicoke, ON M8Z\n" +
                 "2X3","L-S","8:00-20:00","416-249-6100","info@etobicokehumanesociety.com","$99.00 CA",R.drawable.ths,43.644354,-79.527953));
         business_list.add(new Business(6,"","290 Dixon Rd.,Etobicoke, ON","L-V","9:00-17:00","647-648-0714","info@ps.com","$223.00 CA",R.drawable.petsh5,43.696468, -79.545792));
+        business_list.add(new Business(7,"","2741 The Queensway, Etobicoke, ON M8Z 1M8","L-V","9:00-21:00","416-201-9123","info@fletcherscreekanimalhospital.ca","$99.00 CA",R.drawable.tdvg_logo,43.626197, -79.503205));
 
 
         //Selecting shelters by user location
@@ -168,9 +169,6 @@ public class SheltersFragment extends Fragment{
 
         }
 
-
-
-
         ////
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));    //cos it's a fragment
@@ -184,18 +182,16 @@ public class SheltersFragment extends Fragment{
         adapter_shelters.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String address = business_list.get(recyclerView.getChildAdapterPosition(view)).getBu_address();
+                String address = busines_nearby.get(recyclerView.getChildAdapterPosition(view)).getBu_address();
                 Toast.makeText(getContext(),"selected " + address,Toast.LENGTH_LONG).show();
 
                 //interface envia objecto
-                ishelters.sendShelter(business_list.get(recyclerView.getChildAdapterPosition(view)));  //send all object
-
+              //  ishelters.sendShelter(business_list.get(recyclerView.getChildAdapterPosition(view)));  //send all object
+                ishelters.sendShelter(busines_nearby.get(recyclerView.getChildAdapterPosition(view))); //send the object
             }
         });
 
         System.out.println(business_list.size());
-
-
 
 
         return view;
