@@ -14,7 +14,16 @@
         android:textSize="24sp"
         android:background="@color/colorAccent"
         android:text="Welcome (User Name)"
-         />
+        tools:ignore="MissingConstraints" />
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:padding="24dp"
+        android:textSize="24sp"
+        android:background="@color/colorAccent"
+        android:text="Welcome ARTURO"
+        tools:ignore="MissingConstraints" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

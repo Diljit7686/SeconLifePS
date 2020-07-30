@@ -1,18 +1,163 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingTop="60dp">
+    android:paddingTop="40dp">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="1dp">
+
+        <ImageView
+            android:id="@+id/app_image"
+            android:layout_width="100dp"
+            android:layout_height="120dp"
+            android:src="@drawable/petsh3">
+
+        </ImageView>
+
+        <TextView
+            android:id="@+id/app_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_toEndOf="@id/app_image"
+            android:layout_toRightOf="@id/app_image"
+            android:text="Name"
+            android:textSize="15sp"
+            android:textStyle="bold"></TextView>
+
+        <TextView
+            android:id="@+id/app_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/app_name"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_toEndOf="@id/app_image"
+            android:layout_toRightOf="@id/app_image"
+            android:text="Address"
+            android:textSize="15sp"
+            android:textStyle="bold"></TextView>
+
+        <TextView
+            android:id="@+id/app_visit_days"
+            android:layout_width="38dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/app_address"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_toEndOf="@id/app_image"
+            android:text="L-V"
+            android:textSize="15sp"
+            android:textStyle="bold"></TextView>
+
+        <TextView
+            android:id="@+id/app_visit_hours"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/app_visit_days"
+            android:layout_marginStart="70dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="-19dp"
+            android:layout_toEndOf="@id/app_image"
+            android:text="9:99-99:99"
+            android:textSize="15sp"
+            android:textStyle="bold"></TextView>
+
+        <TextView
+            android:id="@+id/app_contact_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/app_visit_hours"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_toEndOf="@id/app_image"
+            android:text="999-999-9999"
+            android:textSize="15sp"
+            android:textStyle="bold"></TextView>
+
+        <TextView
+            android:id="@+id/app_contact_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/app_contact_number"
+            android:layout_marginStart="13dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="2dp"
+            android:layout_toEndOf="@id/app_image"
+            android:text="e-mail"
+            android:textSize="15sp"
+            android:textStyle="bold"></TextView>
+
+        <TextView
+            android:id="@+id/app_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/app_contact_email"
+            android:layout_marginStart="-91dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="7dp"
+            android:layout_toEndOf="@id/app_image"
+            android:text="$ 9999.99 CA"
+            android:textSize="15sp"
+            android:textStyle="bold"></TextView>
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"/>
+
+    <TextView
+        android:id="@+id/app_subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="20dp"
+        android:text="Set an Appointment"
+        android:textSize="17sp"
+        android:layout_gravity="center"
+        android:textStyle="bold">
+    </TextView>
+
+    <EditText
+        android:id="@+id/app_dateApp"
+        style="@style/editTextregister_style"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center"
+        android:hint=" Date of appointment"
+        android:inputType="date"
+        />
+
+    <EditText
+        android:id="@+id/app_hourApp"
+        style="@style/editTextregister_style"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center"
+        android:hint="Hour of appointment"
+        android:inputType="datetime" />
 
     <Button
-        android:id="@+id/appo_save"
-        android:layout_width="15dp"
-        android:layout_height="121dp"
-        android:layout_weight="1"
-        android:text="Button" />
+        android:id="@+id/app_btnSave"
+        style="@style/buttonregister_style"
+        android:layout_width="188dp"
+        android:layout_gravity="center"
+        android:paddingLeft="10dp"
+        android:text="Save" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"/>
+
+
+
 
 
 </LinearLayout>

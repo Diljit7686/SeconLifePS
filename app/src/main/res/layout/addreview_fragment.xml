@@ -12,7 +12,7 @@
         android:padding="1dp">
 
         <ImageView
-            android:id="@+id/det_image"
+            android:id="@+id/rv_image"
             android:layout_width="100dp"
             android:layout_height="120dp"
             android:src="@drawable/petsh3">
@@ -20,89 +20,89 @@
         </ImageView>
 
         <TextView
-            android:id="@+id/det_name"
+            android:id="@+id/rv_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginLeft="10dp"
-            android:layout_toEndOf="@id/det_image"
-            android:layout_toRightOf="@id/det_image"
+            android:layout_toEndOf="@id/rv_image"
+            android:layout_toRightOf="@id/rv_image"
             android:text="Name"
             android:textSize="15sp"
             android:textStyle="bold"></TextView>
 
         <TextView
-            android:id="@+id/det_address"
+            android:id="@+id/rv_address"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/det_name"
+            android:layout_below="@id/rv_name"
             android:layout_marginStart="10dp"
             android:layout_marginLeft="10dp"
-            android:layout_toEndOf="@id/det_image"
-            android:layout_toRightOf="@id/det_image"
+            android:layout_toEndOf="@id/rv_image"
+            android:layout_toRightOf="@id/rv_image"
             android:text="Address"
             android:textSize="15sp"
             android:textStyle="bold"></TextView>
 
         <TextView
-            android:id="@+id/det_visit_days"
+            android:id="@+id/rv_visit_days"
             android:layout_width="38dp"
             android:layout_height="wrap_content"
-            android:layout_below="@id/det_address"
+            android:layout_below="@id/rv_address"
             android:layout_marginStart="10dp"
             android:layout_marginLeft="10dp"
-            android:layout_toEndOf="@id/det_image"
+            android:layout_toEndOf="@id/rv_image"
             android:text="L-V"
             android:textSize="15sp"
             android:textStyle="bold"></TextView>
 
         <TextView
-            android:id="@+id/det_visit_hours"
+            android:id="@+id/rv_visit_hours"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/det_visit_days"
+            android:layout_below="@id/rv_visit_days"
             android:layout_marginStart="70dp"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="-19dp"
-            android:layout_toEndOf="@id/det_image"
+            android:layout_toEndOf="@id/rv_image"
             android:text="9:99-99:99"
             android:textSize="15sp"
             android:textStyle="bold"></TextView>
 
         <TextView
-            android:id="@+id/det_contact_number"
+            android:id="@+id/rv_contact_number"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/det_visit_hours"
+            android:layout_below="@id/rv_visit_hours"
             android:layout_marginStart="10dp"
             android:layout_marginLeft="10dp"
-            android:layout_toEndOf="@id/det_image"
+            android:layout_toEndOf="@id/rv_image"
             android:text="999-999-9999"
             android:textSize="15sp"
             android:textStyle="bold"></TextView>
 
         <TextView
-            android:id="@+id/det_contact_email"
+            android:id="@+id/rv_contact_email"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/det_contact_number"
+            android:layout_below="@id/rv_contact_number"
             android:layout_marginStart="13dp"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="2dp"
-            android:layout_toEndOf="@id/det_image"
+            android:layout_toEndOf="@id/rv_image"
             android:text="e-mail"
             android:textSize="15sp"
             android:textStyle="bold"></TextView>
 
         <TextView
-            android:id="@+id/det_price"
+            android:id="@+id/rv_price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/det_contact_email"
+            android:layout_below="@id/rv_contact_email"
             android:layout_marginStart="-91dp"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="7dp"
-            android:layout_toEndOf="@id/det_image"
+            android:layout_toEndOf="@id/rv_image"
             android:text="$ 9999.99 CA"
             android:textSize="15sp"
             android:textStyle="bold"></TextView>
@@ -114,56 +114,45 @@
         android:layout_height="1dp"
         android:background="@android:color/darker_gray"/>
 
-    <RelativeLayout
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/rv_subtitle"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="1dp">
+        android:layout_gravity="center"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="20dp"
+        android:text="Write a Review"
+        android:textSize="17sp"
+        android:textStyle="bold"></TextView>
 
-        <Button
-            android:id="@+id/det_btnRev"
-            style="@style/buttonregister_style"
-            android:layout_width="190dp"
-            android:layout_height="24dp"
-            android:layout_gravity="center"
-            android:paddingLeft="10dp"
-            android:text="Write a Review" />
+    <EditText
+        android:id="@+id/rv_date"
+        style="@style/editTextregister_style"
+        android:layout_width="match_parent"
+        android:layout_gravity="center"
+        android:hint=" comment here..."
+        android:inputType="textMultiLine"
+        android:lines="5"
+        android:maxLines="5"
+        android:scrollbars="vertical"
+        android:gravity="top|left"
+        />
 
-        <Button
-            android:id="@+id/det_btnApp"
-            style="@style/buttonregister_style"
-            android:layout_width="190dp"
-            android:layout_height="24dp"
-            android:layout_gravity="center"
-            android:layout_toRightOf="@id/det_btnRev"
-            android:paddingLeft="10dp"
-            android:text="Set an Appointment" />
-
-    </RelativeLayout>
+    <Button
+        android:id="@+id/rv_btnSave"
+        style="@style/buttonregister_style"
+        android:layout_width="188dp"
+        android:layout_gravity="center"
+        android:paddingLeft="10dp"
+        android:text="Save" />
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="@android:color/darker_gray"/>
-    <TextView
-        android:id="@+id/det_subtitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="1dp"
-        android:text="User Reviews"
-        android:textSize="15sp"
-        android:layout_gravity="center"
-        android:textStyle="bold">
-    </TextView>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewReviews"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingTop="5dp"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-    </androidx.recyclerview.widget.RecyclerView>
+
+
 
 </LinearLayout>

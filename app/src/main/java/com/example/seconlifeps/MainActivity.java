@@ -14,6 +14,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 
+import com.example.seconlifeps.Fragments.AddAppointFragment;
+import com.example.seconlifeps.Fragments.AddReviewFragment;
 import com.example.seconlifeps.Fragments.MainFragment;
 import com.example.seconlifeps.Fragments.PaymentFragment;
 import com.example.seconlifeps.Fragments.ProfileFragment;
@@ -36,6 +38,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     //Reference to destination Fragment (detailed Shelter)
     ReviewsFragment reviewsFragment;
+    AddAppointFragment addAppointFragment;
+    AddReviewFragment addReviewFragment;
 
     //Session variables
 
@@ -50,7 +54,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 
         userId = getIntent().getStringExtra("USER_ID");
-        Log.d("User in Main:",userId.toString());
+        Log.d("User in Main:",userId);
 
 
         toolbar = findViewById(R.id.toolbar);
@@ -142,6 +146,19 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             fragmentTransaction.commit();
         }
 
+        if (item.getItemId() == R.id.shelters) {
+
+            fragmentManager = getSupportFragmentManager();
+            fragmentTransaction = fragmentManager.beginTransaction();
+            SheltersFragment sheltersFragment = new SheltersFragment();
+            // argument
+            Bundle arguments = new Bundle();
+            arguments.putString("userId", userId);
+            sheltersFragment.setArguments(arguments);
+            fragmentTransaction.replace(R.id.container, sheltersFragment);
+            fragmentTransaction.commit();
+        }
+
         if (item.getItemId() == R.id.users) {
 
          //   fragmentManager = getSupportFragmentManager();
@@ -169,10 +186,84 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         //open fragment
         fragmentManager = getSupportFragmentManager();
+        boolean fragmentPopped = fragmentManager.popBackStackImmediate(reviewsFragment.getClass().getName(),0);
         fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.container, reviewsFragment);
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
 
     }
+
+/*
+    private void replaceFragment (Fragment fragment){
+        String backStateName = fragment.getClass().getName();
+
+        FragmentManager manager = getSupportFragmentManager();
+        boolean fragmentPopped = manager.popBackStackImmediate (backStateName, 0);
+
+        if (!fragmentPopped){ //fragment not in back stack, create it.
+            FragmentTransaction ft = manager.beginTransaction();
+            ft.replace(R.id.content_frame, fragment);
+            ft.addToBackStack(backStateName);
+            ft.commit();
+        }
+    }
+*/
+    @Override
+    public void sendToAppointment(Business business) {
+
+
+        //logic here to send the object
+        addAppointFragment = new AddAppointFragment();
+        // bundle object to transport data
+        Bundle bundle = new Bundle();
+        bundle.putSerializable("objecto",business);
+        //bundle.putInt("userId",user);
+        //bundle.putInt("businessId",business);
+        addAppointFragment.setArguments(bundle);
+
+        //open fragment
+        fragmentManager = getSupportFragmentManager();
+        //--
+        boolean fragmentPopped = fragmentManager.popBackStackImmediate(addAppointFragment.getClass().getName(),0);
+
+        if (!fragmentPopped) { //fragment not in back stack, create it.
+            fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.replace(R.id.container, addAppointFragment);
+            fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+            fragmentTransaction.addToBackStack(addAppointFragment.getClass().getName());
+            fragmentTransaction.commit();
+            Log.d("AddtoBackStack","AddAppoint");
+        }
+        //--
+
+
+    }
+
+    @Override
+    public void sendToReview(Business business) {
+        //logic here to send the object
+        addReviewFragment = new AddReviewFragment();
+        // bundle object to transport data
+        Bundle bundle = new Bundle();
+        bundle.putSerializable("objecto",business);
+        //bundle.putInt("userId",user);
+        //bundle.putInt("businessId",business);
+        addReviewFragment.setArguments(bundle);
+
+        //open fragment
+        fragmentManager = getSupportFragmentManager();
+        boolean fragmentPopped = fragmentManager.popBackStackImmediate(addReviewFragment.getClass().getName(),0);
+        if (!fragmentPopped)
+        {
+            fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.replace(R.id.container, addReviewFragment);
+            fragmentTransaction.addToBackStack(null);
+            fragmentTransaction.commit();
+        }
+
+
+
+    }
+
 }

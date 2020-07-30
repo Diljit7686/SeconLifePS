@@ -51,7 +51,7 @@ public class SheltersFragment extends Fragment{
         if (bundle != null) {
             userId = bundle.getString("userId", "0");
         }
-        Log.d("Shelters Fragment", userId.toString());
+        Log.d("Shelters Fragment", userId);
 
         // Getting last location from User
         mySqliteHelper = new SQLiteHelper(this.getContext(),"RECORDDB1.sqlite",null,1);
@@ -206,17 +206,17 @@ public class SheltersFragment extends Fragment{
 
     }
 
-    public boolean nearby(Double userlat, Double userlong, Double bu_lat, Double bu_lon, Double r)
+    public boolean nearby(double userlat, double userlong, double bu_lat, double bu_lon, double r)
     {
         //using a square perimeter
-        Double limitN, limitS, limitE, limitW;
+        double limitN, limitS, limitE, limitW;
         limitN = userlat + r;
         limitS = userlat - r;
         limitE     = userlong + r;
         limitW     = userlong - r;
-        Log.d("User Lat-Long:",userlat.toString()+"-"+userlong.toString());
-        Log.d("Limits N-S-E-W:",limitN.toString()+"-"+limitS.toString()+"-"+limitE.toString()+"-"+limitW.toString());
-        Log.d("Business Lat-Long:",bu_lat.toString()+"-"+bu_lon.toString());
+     //   Log.d("User Lat-Long:",userlat.toString()+"-"+userlong.toString());
+       // Log.d("Limits N-S-E-W:",limitN.toString()+"-"+limitS.toString()+"-"+limitE.toString()+"-"+limitW.toString());
+       // Log.d("Business Lat-Long:",bu_lat.toString()+"-"+bu_lon.toString());
 
 
         if (bu_lat <= limitN && bu_lat >= limitS) {

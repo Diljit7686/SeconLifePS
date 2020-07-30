@@ -58,7 +58,7 @@ public class MainFragment extends Fragment implements OnMapReadyCallback {
         if (bundle != null) {
             userId = bundle.getString("userId", "0");
         }
-        Log.d("Main Fragment", userId.toString());
+        Log.d("Main Fragment", userId);
 
 
 
