@@ -10,7 +10,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.seconlifeps.model.Nota;
+
 import com.example.seconlifeps.model.User;
 
 import java.util.ArrayList;
