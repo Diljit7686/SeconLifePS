@@ -23,7 +23,6 @@ import com.example.seconlifeps.Fragments.ProfileFragment;
 import com.example.seconlifeps.Fragments.ReviewsFragment;
 import com.example.seconlifeps.Fragments.SheltersFragment;
 import com.example.seconlifeps.interfaces.iShelters;
-import com.example.seconlifeps.model.Appointments;
 import com.example.seconlifeps.model.Business;
 import com.google.android.material.navigation.NavigationView;
 
@@ -169,7 +168,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
          //   fragmentTransaction.commit();
 
 
-            Intent i = new Intent(MainActivity.this, ListNotesActivity.class);
+            Intent i = new Intent(MainActivity.this, UsersActivity.class);
             //Intent i = new Intent(LoginActivity.this, PaymentActivity.class);
             startActivity(i);
         }

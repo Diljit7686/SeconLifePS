@@ -30,7 +30,7 @@
 
         </activity>
         <activity
-            android:name=".ListNotesActivity"
+            android:name=".UsersActivity"
             android:theme="@style/AppTheme.NoActionBar">
 
         </activity>
