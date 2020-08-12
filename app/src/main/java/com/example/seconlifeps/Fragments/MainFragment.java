@@ -189,9 +189,15 @@ public class MainFragment extends Fragment implements OnMapReadyCallback {
         options = new MarkerOptions().position(latlon).title("South Etobicoke Animal Rescue").snippet("2741 The Queensway, Etobicoke, ON M8Z 1M8");
         googleMap.addMarker(options);
 
+        // Marker 7
+        latlon = new LatLng(43.696468,-79.545792);
+        options = new MarkerOptions().position(latlon).title("AGC Pet Volunteer").snippet("290 Dixon Rd.,Etobicoke, ON");
+        googleMap.addMarker(options);
+
+
         CameraPosition cameraPosition = CameraPosition.builder().target(latlon).zoom(10).bearing(0).tilt(0).build();
         googleMap.moveCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
-
+//43.696468, -79.545792)
 
     }
 

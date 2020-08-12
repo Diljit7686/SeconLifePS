@@ -36,10 +36,13 @@ public class ReviewsFragment extends Fragment{
     //Reference to AddAppointment Fragment
     Activity activity;
     iShelters ishelters;
+    Business business; //= null;
 
+    //RecyclerView variables
     Adapter_reviews adapter_reviews;
     RecyclerView recyclerView;
 
+    //Content of RecyclerView
     ArrayList<Reviews> review_list;
 
     @Nullable
@@ -64,7 +67,7 @@ public class ReviewsFragment extends Fragment{
 
         // bundle object to receive object
         Bundle objectShelter = getArguments();
-        Business business; //= null;
+
 
         if (objectShelter != null)
         {
@@ -132,8 +135,7 @@ public class ReviewsFragment extends Fragment{
 
 
                 // get the business id from bundle dcreating a business property in the fragment
-                ishelters.sendToAppointment(new Business(5,"","67 Six Point Rd, Etobicoke, ON M8Z\n" +
-                        "2X3","L-S","8:00-20:00","416-249-6100","info@etobicokehumanesociety.com","$99.00 CA",R.drawable.ths,43.644354,-79.527953));
+                ishelters.sendToAppointment(business);
                 //send the object
 
 
@@ -166,8 +168,7 @@ public class ReviewsFragment extends Fragment{
 
 
                 // get the business id from bundle dcreating a business property in the fragment
-                ishelters.sendToReview(new Business(5,"","67 Six Point Rd, Etobicoke, ON M8Z\n" +
-                        "2X3","L-S","8:00-20:00","416-249-6100","info@etobicokehumanesociety.com","$99.00 CA",R.drawable.ths,43.644354,-79.527953));
+                ishelters.sendToReview(business);
                 //send the object
 
 /*una unterface que use on objeto mas global que represente la sesion o estado de la app.

@@ -16,12 +16,14 @@ import android.view.MenuItem;
 
 import com.example.seconlifeps.Fragments.AddAppointFragment;
 import com.example.seconlifeps.Fragments.AddReviewFragment;
+import com.example.seconlifeps.Fragments.AppointmentsFragment;
 import com.example.seconlifeps.Fragments.MainFragment;
 import com.example.seconlifeps.Fragments.PaymentFragment;
 import com.example.seconlifeps.Fragments.ProfileFragment;
 import com.example.seconlifeps.Fragments.ReviewsFragment;
 import com.example.seconlifeps.Fragments.SheltersFragment;
 import com.example.seconlifeps.interfaces.iShelters;
+import com.example.seconlifeps.model.Appointments;
 import com.example.seconlifeps.model.Business;
 import com.google.android.material.navigation.NavigationView;
 
@@ -146,16 +148,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             fragmentTransaction.commit();
         }
 
-        if (item.getItemId() == R.id.shelters) {
+        if (item.getItemId() == R.id.appointments) {
 
             fragmentManager = getSupportFragmentManager();
             fragmentTransaction = fragmentManager.beginTransaction();
-            SheltersFragment sheltersFragment = new SheltersFragment();
+            AppointmentsFragment appointmentsFragment = new AppointmentsFragment();
             // argument
             Bundle arguments = new Bundle();
             arguments.putString("userId", userId);
-            sheltersFragment.setArguments(arguments);
-            fragmentTransaction.replace(R.id.container, sheltersFragment);
+            appointmentsFragment.setArguments(arguments);
+            fragmentTransaction.replace(R.id.container, appointmentsFragment);
             fragmentTransaction.commit();
         }
 
